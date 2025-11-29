@@ -1,0 +1,3 @@
+export const SET_EVENT = "SET_EVENT";
+export const SET_SERVER_ERROR = "SET_SERVER_ERROR";
+export const SET_SELECTED_EVENT = "SET_SELECTED_EVENT";
