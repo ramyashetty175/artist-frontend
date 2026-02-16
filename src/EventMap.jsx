@@ -7,7 +7,6 @@ import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
 import markerIcon from 'leaflet/dist/images/marker-icon.png';
 import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 
-// Fix default icon issue
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: markerIcon2x,
@@ -15,7 +14,6 @@ L.Icon.Default.mergeOptions({
   shadowUrl: markerShadow,
 });
 
-// Center map when selectedEvent changes
 function Recenter({ position }) {
   const map = useMap();
   useEffect(() => {
@@ -27,7 +25,7 @@ function Recenter({ position }) {
 export default function EventMap() {
   const { selectedEvent } = useContext(EventContext);
 
-  if (!selectedEvent) return null; // nothing to show if no event selected
+  if (!selectedEvent) return null;
 
   const position = [selectedEvent.geo[0], selectedEvent.geo[1]];
 
